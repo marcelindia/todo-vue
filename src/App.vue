@@ -8,17 +8,17 @@ export default {
         {
           id: 1,
           text: 'Learn Vue',
-          // completed: true
+          completed: true
         },
         {
           id: 2,
           text: 'Complete Vue Project',
-          // completed: false
+          completed: false
         },
         {
           id: 3,
           text: 'Run errands',
-          // completed: false
+          completed: false
         }
       ]
     }
@@ -28,7 +28,7 @@ methods: {
     this.todos.push({
       id: this.todos.length + 1,
       text: this.newTodo,
-      // completed: false
+      completed: false
     })
     this.newTodo = ''
   },
@@ -44,23 +44,14 @@ methods: {
 
       <h1>June Todo List:</h1>
     <input class="input" placeholder="Add New Task" v-model="newTodo" />
-    <input class="button" type="button" value="Add" @click="addTodo" />
-    <ul>
-      <li>
+    <input class="add-button" type="button" value="Add" @click="addTodo" />
+    <ul class="task-list">
+      <li class="task-list-item">
         <input type="checkbox" v-model="todos[0].completed" />
         <span>{{ todos[0].text }}</span>
-        <input type="button" value="Delete" @click="deleteTodo(0)" />
+        <input class="del-button" type="button" value="Delete" @click="deleteTodo(0)" />
       </li>
     </ul>
-    <!-- <button class="button" v-on:click="addTodo()">Submit</button> -->
-    <!-- <ul>
-      <li v-for="(todo,i) in todos" :key="todo-list">
-        <span>
-          {{ i + 1 }} : {{ todo.text }}
-      </span>
-      <button class="delete-button" @click="deleteTodo(i)">Delete</button>
-      </li>
-      </ul>  -->
         </div>
   </div>
 </template>

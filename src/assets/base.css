@@ -1,34 +1,58 @@
 #app {
-  max-width: 480px;
-  width: 100%;
+  max-width: 100%;
+  /* width: 100%; */
   max-height: 100%;
-  background-color: #d290e4;
+  background-color:rgba(215, 85, 165, 0.3);
   padding: 25px;
-  border-radius: 20px;
+  border-radius: 25px;
   overflow: auto;
   color: #222;
-
   font-weight: normal;
 }
-button {
+.add-button {
+  width: 40px;
+  height:30px;
+  flex-shrink: 0;
   background: white;
   border: none;
-  color: black;
-  font-size: 1.2rem;
+  border-radius: 50%;
+  color: #272727;
+  font-size: 1rem;
   margin-left: 1rem;
   cursor: pointer;
 }
+.input{
+  width: 100%;
+padding: 0 5px;
+outline: none;
+border: none;
+border-bottom: 1px solid #272727;
+background-color: transparent;
+margin-right:15px;
+color: #272727;
+box-shadow: none;
+border-radius: 0;
+}
 
-.delete-button {
-  background: red;
+.del-button {
+  background: rgb(252, 105, 105);
   color: white;
   padding: 8px 16px;
   border: none;
+  border-radius: 50%;
 margin:10px;
 font-size: 16px;
   cursor: pointer;
 }
 
+.task-list-item{
+  background-color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 35px;
+  margin-bottom: 12px;
+}
 
 body{
   width: 100%;
@@ -38,28 +62,21 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(
-    to right,
-    #fdf7ff,
-    #fff5fb,
-    #fff4f2,
-    #fff5e9,
-    #fff8e4,
-    #f9fae3,
-    #f2fbe3,
-    #e9fde6,
-    #defbed,
-    #d8f7f3,
-    #d7f3f7,
-    #daeef7
-  );
-  background-size: 300% 300%;
-  animation: gradient 15s ease infinite;
-  color:black
+  background-image:url('/src/assets/much-todo6.jpeg');
+ background-attachment: fixed;
+ background-size: 450px;
 }
 
 ul{
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+
+h1{
+  font-size: 20px;
+  font-weight: 32px;
+  text-align: center;
+  color: black
 }
