@@ -10,17 +10,17 @@ export default {
         {
           id: 1,
           text: 'Learn Vue',
-          // completed: true
+          completed: true
         },
         {
           id: 2,
           text: 'Complete Vue Project',
-          // completed: false
+          completed: false
         },
         {
           id: 3,
           text: 'Run errands',
-          // completed: false
+          completed: false
         }
       ]
     }
@@ -33,6 +33,9 @@ methods: {
       completed: false
     })
     this.newTodo = ''
+  },
+  deleteTodo(i){
+    this.todos.splice(i,1)
   }
 }}
 </script>
@@ -43,11 +46,11 @@ methods: {
     <input class="input" v-model="newTodo" />
     <button class="button" v-on:click="addTodo()">Submit</button>
     <ul>
-      <li v-for="(todo,i) in todos">
+      <li v-for="(todo,i) in todos" :key="todo-id">
       <span>
         {{ i + 1 }} : {{ todo.text }}
       </span>
-      
+      <button class="delete-button" @click="deleteTodo(i)">Delete</button>
       </li>
       </ul> 
   </div>
