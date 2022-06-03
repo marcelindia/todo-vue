@@ -1,8 +1,7 @@
 #app {
   max-width: 100%;
-  /* width: 100%; */
   max-height: 100%;
-  background-color:rgba(215, 85, 165, 0.3);
+  background-color:rgba(255, 255, 255, 0.3);
   padding: 25px;
   border-radius: 25px;
   overflow: auto;
@@ -10,12 +9,12 @@
   font-weight: normal;
 }
 .add-button {
-  width: 40px;
+  width: 70px;
   height:30px;
   flex-shrink: 0;
   background: white;
   border: none;
-  border-radius: 50%;
+  /* border-radius: 50%; */;
   color: #272727;
   font-size: 1rem;
   margin-left: 1rem;

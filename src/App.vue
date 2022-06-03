@@ -8,7 +8,7 @@ export default {
         {
           id: 1,
           text: 'Learn Vue',
-          completed: true
+          completed: false
         },
         {
           id: 2,
@@ -17,7 +17,7 @@ export default {
         },
         {
           id: 3,
-          text: 'Run errands',
+          text: 'Take a break',
           completed: false
         }
       ]
@@ -43,15 +43,15 @@ methods: {
     <div id="container">
 
       <h1>June Todo List:</h1>
-    <input class="input" placeholder="Add New Task" v-model="newTodo" />
-    <input class="add-button" type="button" value="Add" @click="addTodo" />
-    <ul class="task-list">
-      <li class="task-list-item">
-        <input type="checkbox" v-model="todos[0].completed" />
-        <span>{{ todos[0].text }}</span>
-        <input class="del-button" type="button" value="Delete" @click="deleteTodo(0)" />
-      </li>
-    </ul>
+    <input type="text" class="input" placeholder="Add New Task" v-model="newTodo" />
+    <button class="add-button" v-on:click="addTodo()"  @click.enter="newTodo">Submit</button>
+   <!-- <div v-for="todo in todos" :key="todo-list"> -->
+<ul>
+       <li v-for="(todo,i) in todos">
+       <span>{{i + 1}} : {{todo.text}}</span>
+        <button class="del-button" @click="deleteTodo(i)">Delete</button>
+       </li>
+     </ul>
         </div>
   </div>
 </template>
