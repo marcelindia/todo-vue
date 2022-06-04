@@ -54,7 +54,7 @@ export default {
     </form>
     <ul class="list">
       <div class="list-group">
-        <li v-for="todo in todos" :key="todo.id">
+        <li v-for="(todo, i) in todos" :key="todo.id">
           <input class="checkbox" type="checkbox" v-model="todo.completed" />
           <span v-if="!todo.editing" :class="{ completed: todo.completed }">{{
             todo.text
