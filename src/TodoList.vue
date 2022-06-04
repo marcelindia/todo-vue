@@ -52,8 +52,8 @@ export default {
       <input class="input" v-model="newTodo" />
       <button class="add-button">Add</button>
     </form>
-    <ul class="list">
-      <div class="list-group">
+    <ul>
+      <div>
         <li v-for="(todo, i) in todos" :key="todo.id">
           <input class="checkbox" type="checkbox" v-model="todo.completed" />
           <span v-if="!todo.editing" :class="{ completed: todo.completed }">{{
