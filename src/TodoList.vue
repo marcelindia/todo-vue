@@ -60,9 +60,8 @@ export default {
             todo.text
           }}</span>
           <input
-            class="form-2"
+            class="input"
             v-if="todo.editing"
-            style="display: inline"
             type="text"
             v-model="todo.text"
           />
