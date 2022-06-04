@@ -51,8 +51,8 @@
   font-size: 16px;
   cursor: pointer;
 }
-.complete-button {
-  background: rgb(92, 170, 20);
+.updated-button {
+  background: rgb(245, 168, 13);
   color: white;
   padding: 8px 16px;
   border: none;

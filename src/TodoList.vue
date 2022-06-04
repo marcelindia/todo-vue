@@ -74,7 +74,7 @@ export default {
             Edit
           </button>
           <button
-            class="edit-button"
+            class="updated-button"
             v-if="todo.editing"
             @click="todo.editing = false"
           >
