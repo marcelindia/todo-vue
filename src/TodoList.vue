@@ -47,7 +47,7 @@ export default {
 <template>
   <div id="app">
     <div id="container"></div>
-    <h1>June Todo List:</h1>
+    <h1>June's Todo List:</h1>
     <form @submit.prevent="addTodo">
       <input class="input" v-model="newTodo" />
       <button class="add-button">Add</button>
