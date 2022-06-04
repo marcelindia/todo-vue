@@ -4,6 +4,7 @@ export default {
   data() {
     return {
       newTodo: "",
+      editing: false,
       todos: [
         {
           id: 1,
@@ -32,6 +33,7 @@ export default {
         id: this.todos.length + 1,
         text: this.newTodo,
         completed: false,
+        editing: false,
       });
       this.newTodo = "";
     },
@@ -44,39 +46,44 @@ export default {
 
 <template>
   <div id="app">
-    <div id="container">
-      <h1>June Todo List:</h1>
-      <div>
-        <input
-          type="text"
-          class="input"
-          placeholder="Add New Task"
-          v-model="newTodo"
-          v-on:keyup.enter="addTodo"
-        />
-        <button class="add-button" v-on:click="addTodo()">Submit</button>
-        <ul>
-          <li v-for="(todo, i) in todos">
-            <input
-              type="checkbox"
-              v-model="todo.completed"
-              @click="completed = !completed"
-              v-on:keyup.enter="completed"
-            />
-            <span>{{ i + 1 }}.{{ todo.text }}</span>
-
-            <button class="edit-button" @click="editTodo(i)">Edit</button>
-            <button
-              class="del-button"
-              @click="deleteTodo(i)"
-              v-on:keyup.delete="deleteTodo"
-            >
-              Delete
-            </button>
-          </li>
-        </ul>
+    <div id="container"></div>
+    <h1>June Todo List:</h1>
+    <form @submit.prevent="addTodo">
+      <input class="input" v-model="newTodo" />
+      <button class="add-button">Add</button>
+    </form>
+    <ul class="list">
+      <div class="list-group">
+        <li v-for="todo in todos" :key="todo.id">
+          <input class="checkbox" type="checkbox" v-model="todo.completed" />
+          <span v-if="!todo.editing" :class="{ completed: todo.completed }">{{
+            todo.text
+          }}</span>
+          <input
+            class="form-2"
+            v-if="todo.editing"
+            style="display: inline"
+            type="text"
+            v-model="todo.text"
+          />
+          <button
+            class="edit-button"
+            v-if="!todo.editing"
+            @click="todo.editing = true"
+          >
+            Edit
+          </button>
+          <button
+            class="edit-button"
+            v-if="todo.editing"
+            @click="todo.editing = false"
+          >
+            Update
+          </button>
+          <button class="del-button" @click="deleteTodo(i)">Delete</button>
+        </li>
       </div>
-    </div>
+    </ul>
   </div>
 </template>
 
